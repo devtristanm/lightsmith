@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Lights Pro - Professional Holiday Lighting Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>🎄 Christmas Lights Pro</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="nav-cta-button">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="christmas-house-winter-landscape-rdxyrm9ozx0f500l.jpg" alt="Beautiful Christmas Light Display">
+        </div>
+        <div class="hero-content">
+            <h2 class="hero-title">Transform Your Home Into a Winter Wonderland</h2>
+            <p class="hero-subtitle">Professional Christmas light installation and design services for homes and businesses</p>
+            <button class="cta-button" onclick="scrollToContact()">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h3>Seasonal Installation</h3>
+                    <p>Professional installation and removal of Christmas lights for the holiday season</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Permanent Lighting</h3>
+                    <p>Year-round architectural lighting solutions for your home's exterior</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Custom Design</h3>
+                    <p>Personalized lighting designs tailored to your home's unique architecture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <p class="gallery-subtitle">See the magic we've created for our customers</p>
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                    <span class="indicator" onclick="currentSlide(4)"></span>
+                </div>
+                <button class="carousel-btn next-btn" onclick="changeSlide(1)">❯</button>
+            </div>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="comparison-container">
+                        <div class="comparison-slider">
+                            <div class="comparison-image">
+                                <div class="before-image">
+                                    <img src="before.jpg" alt="House before Christmas lights installation">
+                                </div>
+                                <div class="after-image">
+                                    <img src="after.jpg" alt="House after Christmas lights installation">
+                                </div>
+                            </div>
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button">
+                                    <span>⟷</span>
+                                </div>
+                            </div>
+                            <div class="comparison-labels">
+                                <span class="before-label">Before</span>
+                                <span class="after-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="comparison-container">
+                        <div class="comparison-slider">
+                            <div class="comparison-image">
+                                <div class="before-image">
+                                    <img src="before.jpg" alt="House before Christmas lights installation">
+                                </div>
+                                <div class="after-image">
+                                    <img src="after.jpg" alt="House after Christmas lights installation">
+                                </div>
+                            </div>
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button">
+                                    <span>⟷</span>
+                                </div>
+                            </div>
+                            <div class="comparison-labels">
+                                <span class="before-label">Before</span>
+                                <span class="after-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="comparison-container">
+                        <div class="comparison-slider">
+                            <div class="comparison-image">
+                                <div class="before-image">
+                                    <img src="before.jpg" alt="House before Christmas lights installation">
+                                </div>
+                                <div class="after-image">
+                                    <img src="after.jpg" alt="House after Christmas lights installation">
+                                </div>
+                            </div>
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button">
+                                    <span>⟷</span>
+                                </div>
+                            </div>
+                            <div class="comparison-labels">
+                                <span class="before-label">Before</span>
+                                <span class="after-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="comparison-container">
+                        <div class="comparison-slider">
+                            <div class="comparison-image">
+                                <div class="before-image">
+                                    <img src="before.jpg" alt="House before Christmas lights installation">
+                                </div>
+                                <div class="after-image">
+                                    <img src="after.jpg" alt="House after Christmas lights installation">
+                                </div>
+                            </div>
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button">
+                                    <span>⟷</span>
+                                </div>
+                            </div>
+                            <div class="comparison-labels">
+                                <span class="before-label">Before</span>
+                                <span class="after-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get Your Free Quote</h2>
+            <p class="contact-subtitle">Tell us about your vision and we'll bring it to life</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Property Address *</label>
+                    <input type="text" id="address" name="address" placeholder="Street address, City, State, ZIP" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="quoteType">What type of quote are you looking for? *</label>
+                    <select id="quoteType" name="quoteType" required>
+                        <option value="">Select an option</option>
+                        <option value="seasonal">Seasonal Installation Only</option>
+                        <option value="permanent">Permanent Lighting Only</option>
+                        <option value="both">Both Seasonal & Permanent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Describe where you'd like lights installed *</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Please describe the areas where you'd like Christmas lights installed (e.g., roofline, windows, trees, bushes, walkways, etc.)" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="houseImages">Upload Photos of Your Home (Optional but Highly Recommended)</label>
+                    <div class="file-upload-area">
+                        <input type="file" id="houseImages" name="houseImages" multiple accept="image/*">
+                        <div class="file-upload-text">
+                            <span class="upload-icon">📷</span>
+                            <p>Click to upload photos of your home's front and back</p>
+                            <small>We'll use Google Maps if no photos are provided</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Send Quote Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎄 Christmas Lights Pro</h3>
+                    <p>Professional Christmas light installation and design services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 (555) 123-LIGHTS</p>
+                    <p>📧 info@christmaslightspro.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Areas</h4>
+                    <p>Local and surrounding areas</p>
+                    <p>Free estimates available</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Christmas Lights Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snowfall Animation -->
+    <div id="snowfall"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
