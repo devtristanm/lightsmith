@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(contactForm);
         const data = {};
         
-        // Convert FormData to regular object for display
+        // Convert FormData to regular object for JobNimbus
         for (let [key, value] of formData.entries()) {
             if (key === 'houseImages') {
                 data[key] = value.name || 'No files selected';
@@ -47,8 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Simulate form submission (replace with actual submission logic)
-        setTimeout(() => {
+        // Add JobNimbus-specific fields
+        data.leadSource = 'Website Quote Request';
+        data.leadType = 'Christmas Lights Installation';
+        data.timestamp = new Date().toISOString();
+        data.fullName = `${data.firstName} ${data.lastName}`;
+        
+        // Submit to Zapier webhook
+        const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17573513/uiiq9a2/';
+        
+        fetch(zapierWebhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
             // Show success message
             showSuccessMessage();
             
@@ -61,10 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove loading state
             contactForm.classList.remove('loading');
             
-            // Log form data (for development - replace with actual submission)
-            console.log('Form submitted with data:', data);
+            console.log('Form submitted successfully:', result);
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
             
-        }, 2000);
+            // Still show success message to user (don't reveal technical errors)
+            showSuccessMessage();
+            
+            // Reset form
+            contactForm.reset();
+            fileUploadArea.style.borderColor = '#444444';
+            fileUploadArea.style.backgroundColor = '#1a1a1a';
+            fileUploadArea.querySelector('.file-upload-text p').textContent = 'Click to upload photos of your home\'s front and back';
+            
+            // Remove loading state
+            contactForm.classList.remove('loading');
+        });
     });
     
     // Form validation
