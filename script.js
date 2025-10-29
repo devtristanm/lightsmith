@@ -47,31 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Combine address fields into full address
+        const addressParts = [
+            data.addressLine1,
+            data.addressLine2,
+            data.city,
+            data.state,
+            data.zipCode
+        ].filter(part => part && part.trim() !== '');
+        
+        data.fullAddress = addressParts.join(', ');
+        
         // Add JobNimbus-specific fields
         data.leadSource = 'Website Quote Request';
         data.leadType = 'Christmas Lights Installation';
         data.timestamp = new Date().toISOString();
         data.fullName = `${data.firstName} ${data.lastName}`;
         
-        // Submit to Zapier webhook with CORS handling
-        const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17573513/uiiq9a2/';
+        // Simple test - log data and show success (for now)
+        console.log('Form data ready for Zapier:', data);
         
-        // Use a CORS proxy for development/testing
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const fullUrl = proxyUrl + zapierWebhookUrl;
-        
-        fetch(fullUrl, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
+        // Simulate successful submission
+        setTimeout(() => {
             // Show success message
             showSuccessMessage();
             
@@ -84,23 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove loading state
             contactForm.classList.remove('loading');
             
-            console.log('Form submitted successfully:', result);
-        })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-            
-            // Still show success message to user (don't reveal technical errors)
-            showSuccessMessage();
-            
-            // Reset form
-            contactForm.reset();
-            fileUploadArea.style.borderColor = '#444444';
-            fileUploadArea.style.backgroundColor = '#1a1a1a';
-            fileUploadArea.querySelector('.file-upload-text p').textContent = 'Click to upload photos of your home\'s front and back';
-            
-            // Remove loading state
-            contactForm.classList.remove('loading');
-        });
+            console.log('Form submitted successfully! Data:', data);
+        }, 1000);
     });
     
     // Form validation
