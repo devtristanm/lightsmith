@@ -53,13 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
         data.timestamp = new Date().toISOString();
         data.fullName = `${data.firstName} ${data.lastName}`;
         
-        // Submit to Zapier webhook
+        // Submit to Zapier webhook with CORS handling
         const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/17573513/uiiq9a2/';
         
-        fetch(zapierWebhookUrl, {
+        // Use a CORS proxy for development/testing
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const fullUrl = proxyUrl + zapierWebhookUrl;
+        
+        fetch(fullUrl, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
             },
             body: JSON.stringify(data)
         })
