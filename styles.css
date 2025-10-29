@@ -39,10 +39,23 @@ body {
     padding: 0 20px;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 .nav-brand h1 {
     color: #87CEEB;
     font-size: 1.8rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .nav-menu {
@@ -642,6 +655,18 @@ body {
     .nav {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .nav-brand {
+        gap: 0.5rem;
+    }
+    
+    .nav-logo {
+        height: 35px;
+    }
+    
+    .nav-brand h1 {
+        font-size: 1.5rem;
     }
     
     .nav-menu {
